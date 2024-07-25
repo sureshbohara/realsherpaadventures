@@ -1,0 +1,87 @@
+php artisan make:migration create_search_queries_table
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+class CreateSearchQueriesTable extends Migration
+{
+    public function up()
+    {
+        Schema::create('search_queries', function (Blueprint $table) {
+            $table->id();
+            $table->string('query')->unique();
+            $table->integer('count')->default(0);
+            $table->timestamps();
+        });
+    }
+
+    public function down()
+    {
+        Schema::dropIfExists('search_queries');
+    }
+}
+php artisan migrate
+php artisan make:model SearchQuery
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class SearchQuery extends Model
+{
+    use HasFactory;
+
+    protected $fillable = ['query', 'count'];
+}
+use App\Models\SearchQuery;
+
+public function search(Request $request)
+{
+    $query = $request->input('query');
+
+    $searchQuery = SearchQuery::firstOrCreate(['query' => $query]);
+    $searchQuery->increment('count');
+
+    $products = Product::where('name', 'LIKE', "%{$query}%")
+        ->orWhere('description', 'LIKE', "%{$query}%")
+        ->get();
+
+    return view('search_results', compact('products'));
+}
+public function getPopularSearchQueries($limit = 10)
+{
+    return SearchQuery::orderBy('count', 'desc')->take($limit)->get();
+}
+public function showPopularSearchQueries()
+{
+    $popularQueries = $this->getPopularSearchQueries();
+
+    return view('popular_searches', compact('popularQueries'));
+}
+<div class="popular-searches">
+    <h3>Popular Searches</h3>
+    <ul>
+        @foreach($popularQueries as $query)
+            <li>{{ $query->query }} ({{ $query->count }})</li>
+        @endforeach
+    </ul>
+</div>
+use App\Http\Controllers\ProductController;
+
+Route::get('/products/search', [ProductController::class, 'search'])->name('products.search');
+Route::get('/popular-searches', [ProductController::class, 'showPopularSearchQueries'])->name('popular.searches');
+
+
+
+
+<!-- csss image display -->
+ /* Adjust background image */
+    #common_banner {
+        background-image: url('{{$profilesDetails->getFirstMediaUrl('team')}}');
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        height: 600px;
+        position: relative;
+    } -->
