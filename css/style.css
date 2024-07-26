@@ -11565,5 +11565,173 @@ li i{
     padding-top: 110px;
     padding-bottom: 50px;;
 }
+.hidden-xs{
+  display: none;
+}
 
+}
+
+
+/*about us*/
+.about-one__left {
+    position: relative;
+    display: block;
+    margin-left: -45px;
+    margin-right: -10px;
+}
+.about-one__img-box {
+    position: relative;
+    display: block;
+}
+.about-one__img {
+    position: relative;
+    display: block;
+}
+.about-one__img img {
+    width: 100%;
+}
+.about-one__right {
+    position: relative;
+    display: block;
+    margin-left: 20px;
+}
+.about-one__right .section-title {
+    margin-bottom: 20px;
+}
+
+.section-title__title{
+  font-size: 25px;
+}
+
+.about-one__right-text {
+    margin: 0;
+}
+.about-one__points {
+    position: relative;
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 25px;
+}
+.text p{
+  margin-left: 10px;
+}
+
+.list-unstyled {
+    padding-left: 0;
+    list-style: none;
+}
+.about-one__points li {
+    display: flex;
+    align-items: center;
+}
+
+.about-one__points li .icon {
+    height: 16px;
+    width: 16px;
+    font-size: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+}
+
+.thm-btn, .sec-btn {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-appearance: none;
+    border: none;
+    outline: none !important;
+    background-color: #dc3545;
+
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 8px 30px 8px;
+    border-radius: 8px;
+    transition: all 0.3s linear;
+    overflow: hidden;
+    letter-spacing: 0.1em;
+    z-index: 1;
+}
+/*why choose*/
+
+.why-us.padding {
+  background: #f3f3f3; 
+}
+.head-title {
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 40px;
+}
+.head-title .title__primary {
+    margin-bottom: 0px;
+    padding-bottom: 20px;
+    margin-top: 0px;
+    text-transform: capitalize;
+    font-size: 40px;
+    color: #253d52;
+    font-weight: 600;
+}
+.head-title span {
+    color: #000;
+    font-weight: 700;
+}
+.title-line {
+    margin-top: -10px;
+}
+
+.icon-wrapper {
+    display: table;
+    width: 100%;
+    margin: 15px 0;
+}
+.icon-cover {
+    display: table-cell;
+    vertical-align: top;
+    padding-right: 15px;
+}
+.icon-part {
+    width: 66px;
+    height: 66px;
+    background: #0072c0;
+    border-radius: 100%;
+    position: relative;
+    color: #fff;
+    transition: all 600ms ease-in-out;
+    -webkit-transition: all 600ms ease-in-out;
+    -moz-transition: all 600ms ease-in-out;
+}
+.icon-part:before {
+    content: " ";
+    display: block;
+    width: 56px;
+    height: 56px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    border: 2px dotted rgba(255, 255, 255, 0.5);
+    border-radius: 100%;
+}
+.icon-part i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    font-size: 1.667em;
+}
+section.why-us.padding .choose-part .icon-title {
+    background: transparent;
+    color: #0072c0;
+    margin-bottom: 0px;
+    padding: 10px 00;
+}
+.icon-desc {
+    line-height: 25px;
+    color: #9a9a9a;
 }
