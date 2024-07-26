@@ -1460,8 +1460,8 @@ body {
 }
 @media (max-width: 425px) {
   .section-heading .sec__title {
-    font-size: 30px;
-    line-height: 42px !important;
+    font-size: 20px;
+    line-height: 22px !important;
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
@@ -11553,4 +11553,17 @@ li i{
   .main_logo{
     width: 90px;
   }
+
+  .search-fields-container{
+    margin-top: -90px;
+  }
+  .hero-content{
+    display: none;
+  }
+
+  .hero-box {
+    padding-top: 110px;
+    padding-bottom: 50px;;
+}
+
 }
